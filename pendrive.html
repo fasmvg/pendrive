@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>/mnt/pendrive/</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      color: #333;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .path-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(180deg,#fff,#fafafa);
+      border: 1px solid rgba(0,0,0,0.08);
+      padding: 8px 12px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+      max-width: 740px;
+      margin-bottom: 12px;
+    }
+
+    .path-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      border: none;
+      color: #444;
+      padding: 6px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .path-btn:hover { background: rgba(0,0,0,0.04); }
+
+    .path-content {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 1;
+      min-width: 0;
+      overflow: hidden;
+    }
+
+    .os-badge {
+      background: #ffcc33;
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      white-space: nowrap;
+      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .os-badge .os-icon {
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-size: 14px;
+      color: #333;
+      overflow: hidden;
+      white-space: wrap;
+      text-overflow: ellipsis;
+    }
+
+    .breadcrumb li {
+      display: inline-flex;
+      align-items: center;
+      color: #333;
+    }
+
+    .breadcrumb li + li::before {
+      margin: 0 6px;
+      color: #999;
+    }
+
+    .breadcrumb a {
+      color: #0066cc;
+      text-decoration: none;
+      max-width: 180px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    .breadcrumb .current {
+      color: #111;
+      font-weight: 600;
+      max-width: 220px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .path-actions {
+      display: flex;
+      gap: 6px;
+    }
+
+    .icon-btn {
+      background: transparent;
+      border: none;
+      color: #444;
+      padding: 6px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .icon-btn:hover { background: rgba(0,0,0,0.04); }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    li {
+      padding-left: 0px;
+      position: relative;
+    }
+
+    .file-list li::before {
+      content: "📄";
+      position: relative;
+      right: 5px;
+      padding-left: 20px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #0066cc;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Terminal */
+    .terminal {
+      background-color: #1e1e1e;
+      color: #d4d4d4;
+      font-family: monospace;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+
+    .terminal-output {
+      max-height: 200px;
+      overflow-y: auto;
+      margin-bottom: 10px;
+      white-space: pre-wrap;
+    }
+
+    .terminal-input {
+      display: flex;
+      align-items: center;
+    }
+
+    .terminal-input input {
+      flex: 1;
+      background: #1e1e1e;
+      color: #fff;
+      border: none;
+      padding: 0px 5px;
+      font-family: monospace;
+      border-radius: 3px;
+    }
+
+    .terminal-input input:focus {
+      outline: none;
+    }
+
+    @media (max-width: 560px) {
+      .os-badge { display: none; }
+      .path-box { padding: 6px 8px; border-radius: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="path-box" aria-label="Path">
+    <button class="path-btn" title="Undo" aria-label="Undo">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden>
+        <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+
+    <div class="path-content">
+      <span class="os-badge">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg" alt="Tux" class="os-icon">
+        GNU/Linux
+      </span>
+
+      <ol class="breadcrumb" aria-hidden="false">
+        <li><a href="#" data-path="/">/</a></li> 
+        <li><a href="#" data-path="/mnt">mnt/</a></li>
+        <li class="current">pendrive/</li>
+      </ol>
+
+    </div>
+
+    <div class="path-actions">
+      <button class="icon-btn" title="Refresh" aria-label="Refresh">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden>
+          <path d="M21 12a9 9 0 1 0-3 6.7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M21 3v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <ul id="file-list" class="file-list"></ul>
+
+  <div class="terminal">
+    <div class="terminal-input">
+      <span style="color: #0f0; margin-right: 10px;">root@machine:/mnt/pendrive $</span>
+      <input type="text" id="terminal-input" placeholder="" autofocus />
+    </div>
+    <div class="terminal-output" id="terminal-output"></div>
+  </div>
+
+  <script>
+    const files = [
+      { name: "the-night-of-enitharmons-joy.jpg", path: "files/the-night-of-enitharmons-joy.jpg" },
+      { name: "poem.txt", path: "files/poem.txt" }
+    ];
+
+    const list = document.getElementById("file-list");
+
+    files.forEach(file => {
+      const item = document.createElement("li");
+      const link = document.createElement("a");
+      link.href = file.path;
+      link.textContent = file.name;
+      link.target = "_blank";
+      item.appendChild(link);
+      list.appendChild(item);
+    });
+
+    const terminalInput = document.getElementById("terminal-input");
+    const terminalOutput = document.getElementById("terminal-output");
+
+    terminalInput.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        const command = terminalInput.value.trim();
+        if (command === "") return;
+
+        appendToTerminal(`$ ${command}`);
+        simulateCommand(command);
+        terminalInput.value = "";
+      }
+    });
+
+    function appendToTerminal(text) {
+      const line = document.createElement("pre");
+      line.textContent = text;
+      terminalOutput.appendChild(line);
+      terminalOutput.scrollTop = terminalOutput.scrollHeight;
+    }
+
+    function simulateCommand(command) {
+      const responses = {
+        "ls -la": `drwxr-xr-x. 1 root root   26 out  3 00:00 .
+drwxr-xr-x. 1 root root   1,7K out  3 00:00 ..
+-rw-r--r--. 1 root root    382 out  3 00:00 poem.txt
+-rw-r--r--. 1 root root 214861 out  3 18:00 the-night-of-enitharmons-joy.jpg`,
+        "pwd": "/mnt/pendrive",
+        "clear": "clear",
+        "help": "Bash commands: ls -la, pwd, help, clear"
+      };
+
+      if (command === "clear") {
+        terminalOutput.innerHTML = "";
+        return;
+      }
+
+      const response = responses[command] || `bash: command not found: ${command}`;
+      appendToTerminal(response);
+    }
+  </script>
+</body>
+</html>
