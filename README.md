@@ -3,7 +3,7 @@
 Clone este repositório e acesse o arquivo html via browser. 
 Abra-o via linha de comando executando o seu navegador 
 seguido do arquivo pendrive.html ou apenas abra-o 
-diretamente utilizando seu navegador padrão.
+diretamente utilizando a interface seu navegador padrão.
 
 **2. Como utilizar o terminal?**
 
