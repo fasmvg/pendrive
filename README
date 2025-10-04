@@ -1,0 +1,13 @@
+1. Como acessar pendrive?
+
+Clone este repositório e acesse o arquivo html via browser. 
+Abra-o via linha de comando executando o seu navegador 
+seguido do arquivo pendrive.html ou apenas abra-o 
+diretamente utilizando seu navegador padrão.
+
+2. Como utilizar o terminal?
+
+O terminal é uma das funcionalidades integradas ao arquivo pendrive.html 
+para executar comandos Unix. Para ver os comandos disponíveis, 
+digite *help* na linha de comando para ter acesso à lista de 
+todos os comandos suportados.
