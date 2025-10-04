@@ -28,7 +28,7 @@ O pendrive é muito longe do convencional, a placa PCB pare ter sido feita com i
   - WS2812B addressable RGB LED
   - Capacitive touch button (Spring)
 
-Ao explorar mais a fundo a placa PCB e principalmente o módulo ESP32-S3-MINI, percebe-se que sua arquitetura é hostil porém cuidadosa, possuindo diversos serviços de segurança e criptografia habilitados, sendo eles: Secure Boot, Flash Encryption e Assinatura das imagens e OTA seguras. Além dos demais módulos de segurança, eFuses queimados manualmente impedem o controle e acesso a modos de boot e JTAG. Entretanto, esta é apenas uma única camada de segurança visível e que pode ser acessada por analise fisica do dispositivo, sem contar inúmeras camadas de proteção de software e criptografia, as quais protegem partes cruciais do sistema, exibindo apenas o conteúdo misterioso que o pendrive armazena, uma imagem e um poema.
+Ao explorar mais a fundo a placa PCB e principalmente o módulo ESP32-S3-MINI, percebe-se que sua arquitetura é hostil porém cuidadosa, possuindo diversos serviços de segurança e criptografia habilitados, sendo eles: Secure Boot, Flash Encryption e Assinatura das imagens e OTA seguras. Além dos demais módulos de segurança, eFuses queimados manualmente impedem o controle e acesso a modos de boot e JTAG. Entretanto, esta é apenas uma única camada de segurança visível e que pode ser acessada por analise fisica do dispositivo, sem contar inúmeras camadas de proteção de software e criptografia, as quais protegem partes cruciais do sistema, exibindo apenas o conteúdo misterioso que o pendrive armazena: uma imagem e um poema.
 
 Abaixo segue-se conceitos ilustrativos do dispositivo:
 
