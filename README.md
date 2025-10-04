@@ -1,9 +1,21 @@
 **1. Como acessar pendrive?**
 
-Clone este repositório e acesse o arquivo html via browser. 
-Abra-o via linha de comando executando o seu navegador 
-seguido do arquivo pendrive.html ou apenas abra-o 
-diretamente utilizando a interface seu navegador padrão.
+Clone este repositório e acesse o arquivo html na pasta: ``www/index.html``. Logo após acessar o arquivo **index.html**, abra-o ou via linha de comando:
+  
+  ```
+  $ <browser> index.html 
+  ```
+
+Ou, utilizando seu navegador padrão, abra-o diretamente em seu browser arrastando-o ou via um explorador de arquivos. Entretanto, uma terceira opção é possível utilizando um http server local com <img width="20" height="20" alt="gopher" src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Go_gopher_favicon.svg" > **golang**. Para rodar o servidor, certifique-se que possui a linguagem go instalada e devidamente configurada em sua maquina, depois, para rodar o server, acesse o diretório anteriormente clonado deste repositório e execute o comando:
+
+  ```
+  $ go run server.go
+  ```
+
+Caso encontre qualquer **erro** na aplicação, reporte-o em: https://github.com/fasmvg/pendrive/issues
+
+Ou submeta um pedido de pull request caso identifique uma solução: https://github.com/fasmvg/pendrive/pulls
+
 
 **2. Como utilizar o terminal?**
 
