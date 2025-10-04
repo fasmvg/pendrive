@@ -14,7 +14,7 @@ todos os comandos suportados.
 
 **3. Aparência e detalhes do componente**
 
-O pendrive é muito longe do convencional, a placa PCB pare ter sido feita com impressão 3D e sem registro de produção, o que indica ter sido feita de maneira "caseira". Entretanto, parte dos componentes presentes na mainboard do dispositivo podem ser facilmente catalogados facilmente, sendo eles:
+O pendrive é muito longe do convencional, a placa PCB parece ter sido feita com impressão 3D e sem registro de produção, o que indica ter sido feita de maneira "caseira". Entretanto, parte dos componentes presentes na mainboard do dispositivo podem ser facilmente catalogados facilmente, sendo eles:
 
 - **Wireless module – ESP32-S3-MINI**
   - CPU – Dual-core Xtensa LX7 @ 240 MHz,
